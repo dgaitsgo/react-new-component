@@ -1,0 +1,46 @@
+#!/bin/bash
+
+if [ "$1" == "" ]; then
+    echo "Missing component name"
+	exit 0
+fi
+
+if [ ! -d ./$1 ]; then
+	echo -e "Creating $1/$1.js"
+	echo -e "Creating $1/$1.css"
+	echo -e "Creating $1/index.js"
+fi
+
+mkdir $1
+touch $1/$1.css
+touch $1/$1.js
+touch $1/index.js
+
+class=$"import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import './$1.css'
+
+class $1 extends Component {
+
+	constructor(props) {
+		super(props)
+		this.state = {
+
+		}
+	}
+
+	render() {
+		return()
+	}
+}
+
+$1.PropTypes = {
+
+}
+
+export default $1"
+
+index=$"export default from './$1'"
+
+echo "$class" > $1/$1.js
+echo "$index" > $1/index.js
