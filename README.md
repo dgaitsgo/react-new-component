@@ -8,17 +8,18 @@ It's boring to make new components.
 ## Setup
 ```shell
 git clone https://github.com/dgaitsgo/react-new-component.git
-cp ./react-new-component/* /usr/local/bin
+cp ./react-new-component/react-class-comp /usr/local/bin
+cp ./react-new-component/react-func-comp /usr/local/bin
 ```
 
 ## Usage
 ```
-$> react-class-component NewComponent
+$> react-class-comp NewComponent
 ```
 
 or
 ```
-$> react-func-component NewComponent
+$> react-func-comp NewComponent
 ```
 
 ## Result
